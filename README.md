@@ -1,46 +1,63 @@
-# Azure API Management ARM Template (with Pet Store API)
+# Azure API Management ARM Templates
 
-This repository contains an ARM (Azure Resource Manager) template for provisioning an Azure API Management (APIM) service with the **Pet Store API** integrated.
+This repository contains two ARM templates to provision Azure API Management services using Infrastructure as Code.
 
-## 🚀 Purpose
+## 📁 Templates Included
 
-This project demonstrates Infrastructure as Code (IaC) for deploying both:
-- An APIM service
-- A sample API (Swagger Pet Store)
+### 1. Basic API Management Template
+**File:** `basic-apim-template.json`
 
-## 📄 Template File
+This template provisions an API Management (APIM) service in the Developer tier.  
+It includes basic service settings such as publisher email and name.
 
-- `azure-apim-template.json`: Defines the APIM service and adds the Pet Store API using Swagger.
-
-## 📥 Parameters
-
-The template uses the following parameters:
-
-- `apiManagementServiceName`: Name of the APIM instance.
-- `publisherEmail`: Contact email for the publisher.
-- `publisherName`: Display name of the publisher.
-
-You can provide them inline in the portal or in a separate parameters file.
-
-## 🛠️ How to Deploy
-
-1. Go to [Azure Portal](https://portal.azure.com).
-2. Search for **Template deployment** and click "Create".
-3. Select **Build your own template in the editor**.
-4. Paste contents of `azure-apim-template.json`.
-5. Save, review, and deploy.
-
-> Deployment time for Developer tier is ~15-20 minutes.
-
-## 📌 Notes
-
-- This template uses the **Developer SKU** (for testing and development).
-- The Pet Store API is imported via Swagger.
-
-## 🤝 Contributing
-
-Feel free to fork, enhance, or submit issues for improvements.
+Use this template as a starting point to get familiar with ARM deployments.
 
 ---
 
-© 2025 by Félix Suárez
+### 2. Advanced API Management Template with Pet Store API
+**File:** `advanced-apim-petstore-template.json`
+
+This extended template includes:
+- API Management service provisioning.
+- Automatic import of the **Pet Store API** using a Swagger definition.
+
+It demonstrates full Infrastructure as Code: deploying both the service and a working API in a single operation.
+
+---
+
+## ▶️ Video Walkthrough
+
+Step-by-step videos demonstrating the deployment process are available in this playlist:  
+📺 **[Azure APIM ARM Template - Step by Step](https://www.youtube.com/playlist?list=PLVumWBDLm-zLRf0cl8VIrpdKKHnrXPZee)**
+
+
+---
+
+## 🔗 Usage Instructions
+
+1. Open Azure Portal → "Deploy a custom template"
+2. Paste the contents of one of the JSON templates
+3. Configure parameters (Service name, Publisher info)
+4. Review and deploy
+
+---
+
+## 📌 Notes
+
+- Templates are based on API version `2021-08-01`
+- Use `Developer` SKU for test environments
+- Estimated deployment time: ~15-20 minutes
+
+---
+
+## 📚 Resources
+
+- [Microsoft Docs - ARM Templates](https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/overview)
+- [Pet Store Swagger API](https://petstore.swagger.io/)
+
+---
+
+## 🛠 Author
+
+Maintained by [@felixsuarez0727](https://github.com/felixsuarez0727)
+

@@ -1,0 +1,38 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "apiManagementServiceName": {
+      "type": "String",
+      "metadata": {
+        "description": "API Management service name"
+      }
+    },
+    "publisherEmail": {
+      "defaultValue": "admin@contoso.com",
+      "type": "String"
+    },
+    "publisherName": {
+      "defaultValue": "Contoso Organization",
+      "type": "String"
+    }
+  },
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.ApiManagement/service",
+      "apiVersion": "2021-08-01",
+      "name": "[parameters('apiManagementServiceName')]",
+      "location": "[resourceGroup().location]",
+      "sku": {
+        "name": "Developer",
+        "capacity": 1
+      },
+      "properties": {
+        "publisherEmail": "[parameters('publisherEmail')]",
+        "publisherName": "[parameters('publisherName')]"
+      }
+    }
+  ],
+  "outputs": {}
+}
